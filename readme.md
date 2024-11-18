@@ -1,0 +1,11 @@
+# This application works by:
+- scraping Genius.com's new album release list
+- Fetches their URIs from Spotify API
+- Creates a SQLite (melodi.db) for storing Arist, Album, and URIs
+- Uses album URI to fetch all song URIs within each album
+- Creates a new table within melodi.db for all songs, URI, and popularity value
+- Runs fetcher_daily.py for repeated addition of song popularity value
+- Regression analysis will forecast an upper and lower bound of error
+- New values which fall north of the upper bound are flagged as "put_viral"
+- "put_viral" tracks undergo secondary analsis to determine popularity velocity
+- Popularity velocity over (X units/day) are deemed "viral_tracks"
